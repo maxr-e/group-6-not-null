@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registry</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+  <header class="display-flex justify-space-between align-center p-2">
+    <nav class="level">
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Home</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Community Posts</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="title is-info">Rate my Giraffe/Cow</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">My Profile</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Login/Signup</a>
+      </p>
+    </nav>
+
+  </header>
+
+<main class="container has-background-link" style="width: 25%">
+  <div class="is-flex is-justify-content-center">
+        <div class="box has-background-info" >
+        <div class="column">
+        <h2 class="title is-2 is-primary">Login</h2> 
+    <form class="form ">
+        <div class="field">
+            <label class="label ">Username</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-success" id = "username-login" type="text">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user" style="color: #304c7e;"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-success" id = "password-login" type="password">
+              <span class="icon is-small is-left">
+                <i class="fas fa-key" style="color: #e2ee44;"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link" id = "loginbutton">Login</button>
+            </div>
+    </form>
+    </div>
+  </div>
+
+      <div class="column">
+      <div class="box has-background-info" >
+        <h2 class="title is-2 is-primary">Sign-Up</h2>  
+        <form class="form ">
+            <div class="field">
+                <label class="label">Name:</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-success" id = "name-signup" type="text">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user-circle" style="color: #223658;"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas"></i>
+                  </span>
+                </div>
+              </div>
+            <div class="field">
+                <label class="label">Username:</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-success" id = "username-signup" type="text">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user" style="color: #304c7e;"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Password:</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-success" id = "password-signup" type="password">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-key" style="color: #e2ee44;"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Email:</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-success" id = "email-signup"  type="text">
+                  <span class="icon is-small is-left">
+                    <i class="far fa-envelope" style="color: #253b5f;"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Age:</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-success" id = "age-signup" type="text">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-hourglass-half" style="color: #2a436f;"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas"></i>
+                  </span>
+                </div>
+              </div>
+            <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link" id = "signupbutton">Create Profile</button>
+                </div>
+        </form>
+  </div>
+</div>
+</div>
+</main>
+</body>
+<script src="./js/login.js"></script>
+</html>

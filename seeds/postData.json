@@ -1,7 +1,9 @@
 [
-    {
+  {
       "id": 1,
-      "title": "Printemps",
+      "title": "This site suk",
+      "img": "public/cow-giraffe.webp",
+      "description": "asdfasdfasdf",
       "user_id": 1
-    }
+  }
 ]

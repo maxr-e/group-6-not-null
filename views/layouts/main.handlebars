@@ -5,28 +5,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Registry</title>
-  <link rel="stylesheet" href="/public/css/jass.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      Rate my Giraffe/Cow
-    </h1>
-    <!-- Only display the logout button if the user is logged in -->
-    {{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
+  <header class="section hero-banner">
+    <nav class="level">
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Home</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Create Post</a>
+      </p>
+      <p class="level-item centered">
+        <img
+          src="../../public/cow-giraffe.webp"
+          alt="Cow with giraffe patterns" style="height: 30px;">
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Community</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Profile</a>
+      </p>
     </nav>
-    {{/if}}
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
   <footer>
-      
+
   </footer>
 
   <!-- Only include the logout script if the user is logged in -->

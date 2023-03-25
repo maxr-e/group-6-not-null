@@ -1,7 +1,6 @@
 [
-    {
-      "description":
-        "Branches with pink apricot blossoms against a blue background.",
-      "post_id": 1
-    }
-  ]
+  {
+      "id": 1,
+      "description": "Yeah, it do."
+  }
+]

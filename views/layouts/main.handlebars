@@ -7,28 +7,26 @@
   <title>User Registry</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  
 </head>
 
 <body>
   <header class="section hero-banner">
-    <nav class="level">
-      <p class="level-item has-text-centered">
-        <a href="/">Home</a>
-      </p>
-      <p class="level-item has-text-centered">
-        <a href="/post">Create Post</a>
-      </p>
-      <p class="level-item centered">
+    <nav class="level is-mobile">
+      <button class="button is-info level-item has-text-centered home-page-button"><a href="/">Home</a></button>
+      <button class="button is-info level-item has-text-centered home-page-button"><a href="/post">Create Post</a></button>
+      <p class="centered">
         <img
-          src="../../public/cow-giraffe.webp"
-          alt="Cow with giraffe patterns" style="height: 30px;">
+          src="/images/cow-giraffe.webp"
+          alt="Cow with giraffe patterns" style="height: 150px">
       </p>
-      <p class="level-item has-text-centered">
-        <a href="/login">Login</a>
-      </p>
-      <p class="level-item has-text-centered">
-        <a href="/profile">Profile</a>
-      </p>
+        {{#if logged_in}}
+        <button class="button is-danger level-item has-text-centered home-page-button" id="logout">logout</button>
+        {{else}}
+        <button class="button level-item has-text-centered is-success home-page-button"><a href="/login">Login</a></button>
+        {{/if}}
+      <button class="button is-info level-item has-text-centered home-page-button"><a href="/profile">Profile</a></button>
     </nav>
   </header>
   <main class="container container-fluid mt-5">

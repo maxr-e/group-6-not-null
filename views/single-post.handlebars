@@ -1,61 +1,62 @@
 <div class="is-flex is-justify-content-center" id="mainCnt">
-<div class="column">
- <p>
-   <strong>title{{post.title}}</strong> <small>username{{user.username}}</small>
-   <br id="commentInput">
-   description
-   {{post.description}}
-   </p>
-</div>
+  <div class="column">
+    <p>
+      <strong>title{{post.title}}</strong> <small>username{{user.username}}</small>
+      <br id="commentInput">
+      description
+      {{post.description}}
+    </p>
+  </div>
 
 
-<article class="media">
- <figure class="media-left">
-   <p class="image is-200x200">
-     <img src="https://bulma.io/images/placeholders/128x128.png">
-   </p>
- </figure>
-</article>
- <div class="media-content">
- 
-   {{#if logged_in}}
- <section class="flex-row justify-center">
-   <ul>
-   {{#each post.comments as |comment|}}
-<li>{{comment.user.username}} {{comment.description}} {{format_date comment.createdAt}}<li>
-   {{/each}}
-   </ul>
- </section>
- <textarea id="textArea">
+  <article class="media">
+    <figure class="media-left">
+      <p class="image is-200x200">
+        <img src="https://bulma.io/images/placeholders/128x128.png">
+      </p>
+    </figure>
+  </article>
+  <div class="media-content">
+
+    {{#if logged_in}}
+    <section class="flex-row justify-center">
+      <ul>
+        {{#each post.comments as |comment|}}
+        <li>{{comment.user.username}} {{comment.description}} {{format_date comment.createdAt}}
+        <li>
+          {{/each}}
+      </ul>
+    </section>
+    <textarea id="textArea">
 
 
  </textarea>
- <button data-id="{{post.id}}" id="addComment">Add comment</button>
-  <script src="/js/comment.js"></script>
- <!-- Otherwise, provide a link to login -->
- {{else}}
- <a href="/login">You must login first to view this page</a>
- {{/if}}
+    <button data-id="{{post.id}}" id="addComment">Add comment</button>
+    <script src="/js/comment.js"></script>
+    <!-- Otherwise, provide a link to login -->
+    {{else}}
+    <a href="/login">You must login first to view this page</a>
+    {{/if}}
 
 
-</section>
+    </section>
 
 
-   <nav class="level is-mobile">
-     <div class="level-left">
-       <a class="level-item">
-         <span class="icon is-small"><i class="fas fa-reply"></i></span>
-       </a>
-       <a class="level-item">
-         <span class="icon is-small"><i class="fas fa-retweet"></i></span>
-       </a>
-       <a class="level-item">
-         <span class="icon is-small"><i class="fas fa-heart"></i></span>
-       </a>
-     </div>
-   </nav>
- </div>
- <div class="media-right">
-   <button class="delete"></button>
- </div>
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-reply"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-heart"></i></span>
+        </a>
+      </div>
+    </nav>
+  </div>
+  <div class="media-right">
+    <button class="delete"></button>
+  </div>
 </div>

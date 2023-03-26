@@ -10,10 +10,9 @@
     <h3 class="is-flex is-justify-content-center pb-6">My Posts</h3>
 
     {{!-- <div class="is-flex is-justify-content-center"> --}}
-        <div class="columns is-flex is-justify-content-center is-multiline is-desktop">
+        <div class="columns gap is-flex is-justify-space-between is-multiline is-tablet" style="column-gap: 10%;">
     {{#each posts as |post|}}
-            <div class="column"></div>
-            <div class="card color column is-one-third mb-5">
+            <div class="container card is-fluid color column is-one-quarter mb-5">
                 <div class="card-image">
                     <figure class="image is-4by3">
                         <img src="{{ post.img }}" alt="placeholder image">
@@ -35,8 +34,7 @@
                     <br>
                     <time datetime="{{ format_date created_on }}">Comment created on: {{ format_date created_on}}</time>
                     <footer class="card-footer is-justify-content-center">
-                        <button class="button is-danger" data-id="{{post.id}}"><a href="#"
-                                class="card-footer-item">DELETE</a></button>
+                        <button class="card-footer-item post-list button is-danger" data-id="{{post.id}}">DELETE</button>
                     </footer>
                 </div>
             </div>

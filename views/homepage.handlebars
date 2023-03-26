@@ -1,67 +1,48 @@
 {{!-- displays all posts only if logged in--}};
 {{!-- Otherwise show login page --}}
-    <header class="section hero-banner">
-        <nav class="level">
-            <p class="level-item has-text-centered">
-              <a class="link is-info">Home</a>
-            </p>
-            <p class="level-item has-text-centered">
-              <a class="link is-info">Create Post</a>
-            </p>
-            <p class="level-item centered">
-              <img src="C:\Users\Maximilian Eisenberg\Desktop\GitLab_Classwork\Project-2\group-6-not-null\public\cow-giraffe.webp" alt="" style="height: 30px;">
-            </p>
-            <p class="level-item has-text-centered">
-              <a class="link is-info">Community</a>
-            </p>
-            <p class="level-item has-text-centered">
-              <a class="link is-info">Profile</a>
-            </p>
-          </nav>
-    </header>
 
-    <section class="container card">
-        <div class="columns">
-            <div class="column notification is-danger">
-                <div class="control py-4 ">  Community Reviews
+<section class="container card">
+    <div class="columns">
+        <div class="column notification is-danger">
+            <div class="control py-4 "> Community Reviews
+            </div>
+        </div>
+    </div>
+</section>
+{{#each posts as |post| }}
+<section class="container card">
+    <div class="columns">
+        <div class="column notification is-danger">
+            <main>
+                <section class="card">
+                    <img src="{{ post.img }}" alt="image of user cow or giraffe" />
+                </section>
+                <section class="card">
+                    <header>"Post Title"</header>
+                    <a href="/post/{{post.id}}">{{post.title}}</a>
+                    <p>Created by {{post.user.username}} on {{ format_date post.date_created }}</p>
+                </section>
+            </main>
+        </div>
+    </div>
+</section>
+{{/each}}
+<section class="container card">
+    <div class="columns">
+        <div class="column notification is-danger">
+            <div class="column">
+                <div class="box" style="width: 200px;">
+                    <p class="title is-5">"User_name"</p>
+                    <a href="/user/{{user.id}}">{{user.username}}</a>
+                </div>
+            </div>
+            <div class="column">
+                <div class="box">
+                    <p class="title is-5">
+                        <button class="button my-3 is-rounded search-btn tag is-dark is-large">Add Post</button>
+                    </p>
                 </div>
             </div>
         </div>
-    </section> 
-{{#each posts as |post| }}
-    <section class="container card">
-     <div class="columns">
-         <div class="column notification is-danger">
-             <main>
-                 <section class="card">
-                     <img src="{{}}" alt="image of user cow or giraffe" />
-                 </section>
-                 <section class="card">
-                     <header>"Post Title"</header>
-                     <a href="/post/{{post.id}}">{{post.title}}</a>
-                     <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
-                 </section>
-             </main>
-         </div>
-     </div>
-    </section> 
-{{/each}}
-    <section class="container card">
-         <div class="columns">
-            <div class="column notification is-danger">
-                <div class="column">
-                    <div class="box" style="width: 200px;">
-                        <p class="title is-5">"User_name"</p>
-                        <a href="/user/{{user.id}}">{{user.username}}</a>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="box">
-                        <p class="title is-5">
-                            <button class="button my-3 is-rounded search-btn tag is-dark is-large">Add Post</button>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>     
-    </section> 
+    </div>
+</section>

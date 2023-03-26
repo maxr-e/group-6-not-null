@@ -15,6 +15,7 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+
     // user_id: {
     //   type: DataTypes.INTEGER,
     //   references: {
@@ -22,6 +23,7 @@ Comment.init(
     //     key: 'id',
     //   },
     // },
+
   },
   {
     sequelize,

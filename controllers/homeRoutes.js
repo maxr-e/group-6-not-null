@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
         ]
       });
       console.log({postData});
-      const posts = postData.map((post) =>
+      const posts = formData.map((post) =>
         post.get({ plain: true })
       );
       console.log(posts);

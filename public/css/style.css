@@ -58,6 +58,15 @@ body {
     --border-radius: 0.3rem;
   }
 
+  .color {
+    background-color:lightblue;
+  }
+
+  a { 
+    color: white; 
+    text-decoration: underline;
+  }
+
   #mainCnt {
     justify-content: center!important;
     position: relative;

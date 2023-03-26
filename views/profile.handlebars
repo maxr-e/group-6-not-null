@@ -1,50 +1,49 @@
 {{!-- display userprofile along with posts they've made --}}
-{{#if loggedIn}}
- <main class="container mt-5">
-        <div class="row hero">
-            <div class="hero-body is-flex is-justify-content-center">
-                <h2 class="title">Welcome, {{user.username}}!</h2>
-            </div>
+{{#if logged_in}}
+<div class="container mt-5">
+    <div class="row hero">
+        <div class="hero-body is-flex is-justify-content-center">
+            <h2 class="title">Welcome, {{ username }}!</h2>
         </div>
+    </div>
 
-        <h3 class="is-flex is-justify-content-center pb-6">My Posts</h3>
+    <h3 class="is-flex is-justify-content-center pb-6">My Posts</h3>
 
-{{#each posts as |post|}}
-        <div class="is-flex is-justify-content-space-between">
-            <div class="columns is-multiline is-tablet">
-                <div class="card column is-one-third px-5">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="{{ post.image }}" alt="placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <h4 class="title is-4"><a href="/post/{{post.id}}">{{post.title}}</a></h4>
-                                <h5 class="subtitle is-6">Created by: {{ user.username }} on {{ format_date created_on}}
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>comments:</p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Phasellus nec iaculis mauris.
-                        </div>
-                        <br>
-                        <time datetime="{{ format_date created_on }}">{{ format_date created_on}}</time>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item is-danger"><button class="button is-danger"
-                                    data-id="{{post.id}}">DELETE</button></a>
-                        </footer>
-                    </div>
+    {{#each posts as |post|}}
+    <div class="is-flex is-justify-content-center">
+        <div class="is-flex is-justify-content-center columns is-multiline is-tablet">
+            <div class="card color column is-one-third px-5">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="{{ post.img }}" alt="placeholder image">
+                    </figure>
                 </div>
-                {{/each}}
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <h4 class="title is-4 no-style"><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+                            <h5 class="subtitle is-6">Created by: {{ user.username }} on {{ format_date created_on}}
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p>comments:</p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris.
+                    </div>
+                    <br>
+                    <time datetime="{{ format_date created_on }}">Comment created on: {{ format_date created_on}}</time>
+                    <footer class="card-footer">
+                        <button class="button is-danger" data-id="{{post.id}}"><a href="#" class="card-footer-item">DELETE</a></button>
+                    </footer>
+                </div>
+            </div>
+            {{/each}}
 
-    <script src="./js/profile.js"></script>
+            {{else}}
+            <a class="is-flex is-justify-content-center pt-6" href="/login">You must login first to view this page</a>
+            {{/if}}
 
+            <script src="./js/profile.js"></script>
 
-</main>
-    {{else}}
-    <a class="is-flex is-justify-content-center pt-6" href="/login">You must login first to view this page</a>
-    {{/if}}
+</div>

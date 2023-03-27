@@ -4,5 +4,11 @@
         "username": "jaytizzle",
         "email": "jpace93@yahoo.com",
         "password": "asd123"
+    },
+    {
+        "id": 2,
+        "username": "John Doe",
+        "email": "JohnDoe@JD.com",
+        "password": "asd123"
     }
 ]

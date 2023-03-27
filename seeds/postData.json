@@ -5,5 +5,19 @@
       "img": "/images/cow-giraffe.webp",
       "description": "asdfasdfasdf",
       "user_id": 1
+  },
+  {
+    "id": 2,
+    "title": "This site don't suk",
+    "img": "/images/cow-giraffe.webp",
+    "description": "asdfasdfasdf",
+    "user_id": 1
+  },
+  {
+    "id": 3,
+    "title": "This site sometimes suk",
+    "img": "/images/cow-giraffe.webp",
+    "description": "asdfasdfasdf",
+    "user_id": 1
   }
 ]

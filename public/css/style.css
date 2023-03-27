@@ -57,6 +57,97 @@ body {
     --error: rgb(228, 46, 1);
     --border-radius: 0.3rem;
   }
+#welcome {
+  background-color: #ffffff;
+  width: fit-content;
+  font-family: fantasy;
+  font-size: xx-large;
+  position: relative;
+  bottom: 45px;
+}
+
+#postBox {
+  background-color: rgb(241, 236, 143);
+  position: relative;
+  padding: 9px;
+  top: 10px;
+  border-radius: 25px;
+  border: 2px solid #3f8ed0;
+}
+
+#createNew {
+  border-radius: 12px;
+  border: 2px solid  #3f8ed0;
+  padding: 20px;
+  width: 200px;
+  display: flex;
+  position: relative;
+  font-family: fantasy;
+    font-size: large;
+    bottom: 10px;
+    background-color: #5dc555 ;
+    color: antiquewhite;
+    left: 30px;
+
+}
+
+#theButtons {
+  position: relative;
+    bottom: 50px;
+    left: 20px;
+}
+
+#littleIcon {
+
+  position: relative;
+  bottom: 70px;
+  left: 30px;
+
+}
+
+#postTitle {
+  position: relative;
+  padding: 60px;
+  font-family: fantasy;
+}
+
+#selectAnimal {
+  font-family: fantasy;
+  position: relative;
+  display: grid;
+  left: 58px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  top: 25px;
+}
+
+#addImage {
+  font-family: fantasy;
+}
+
+#imgBox {
+  position: relative;
+  width: fit-content;
+  display: grid;
+  left: 900px;
+  top: 67px;
+}
+#theText {
+  width: 860px;
+  position: relative;
+  bottom: 80px;
+  left: 20px;
+}
+
+#postyBox {
+  position: relative;
+  top: 10px;
+}
+#description {
+  font-family: fantasy;
+  font-size: larger;
+}
+
 
   .color {
     background-color:lightblue;
@@ -106,3 +197,9 @@ body {
     font-size: 16px;
     resize: none;
    };
+
+   .button.is-link {
+    background-color: #49c78e !important;
+    border-color: transparent;
+    color: #fff;
+   }

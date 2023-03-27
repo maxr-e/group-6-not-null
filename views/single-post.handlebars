@@ -1,62 +1,39 @@
-<div class="is-flex is-justify-content-center" id="mainCnt">
-  <div class="column">
-    <p>
-      <strong>title{{post.title}}</strong> <small>username{{user.username}}</small>
-      <br id="commentInput">
-      description
-      {{post.description}}
-    </p>
-  </div>
-
-
-  <article class="media">
-    <figure class="media-left">
-      <p class="image is-200x200">
-        <img src="https://bulma.io/images/placeholders/128x128.png">
-      </p>
-    </figure>
-  </article>
-  <div class="media-content">
-
-    {{#if logged_in}}
-    <section class="flex-row justify-center">
-      <ul>
-        {{#each post.comments as |comment|}}
-        <li>{{comment.user.username}} {{comment.description}} {{format_date comment.createdAt}}
-        <li>
-          {{/each}}
-      </ul>
-    </section>
-    <textarea id="textArea">
-
-
- </textarea>
-    <button data-id="{{post.id}}" id="addComment">Add comment</button>
-    <script src="/js/comment.js"></script>
-    <!-- Otherwise, provide a link to login -->
-    {{else}}
-    <a href="/login">You must login first to view this page</a>
-    {{/if}}
-
-
-    </section>
-
-
-    <nav class="level is-mobile">
-      <div class="level-left">
-        <a class="level-item">
-          <span class="icon is-small"><i class="fas fa-reply"></i></span>
-        </a>
-        <a class="level-item">
-          <span class="icon is-small"><i class="fas fa-retweet"></i></span>
-        </a>
-        <a class="level-item">
-          <span class="icon is-small"><i class="fas fa-heart"></i></span>
-        </a>
+{{#if logged_in}}
+<div class="columns gap is-flex is-justify-space-between is-multiline is-tablet" style="column-gap: 10%;">
+  <div class="container card is-fluid color column is-one-third mb-5">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="{{ post.img }}" alt="placeholder image">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <h4 class="title is-4 no-style"><a href="/post/{{ post.id }}">{{ post.title }}</a></h4>
+          <h5 class="subtitle is-6">Created by: {{ user.username }} on {{ format_date post.created_on}}
+          </h5>
+        </div>
       </div>
-    </nav>
+      <div class="content">
+        <p>comments:</p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Phasellus nec iaculis mauris.
+      </div>
+      <br>
+      <time datetime="{{ format_date created_on }}">Comment created on: {{ format_date post.created_on}}</time>
+      <footer class="card-footer is-justify-content-center">
+        <input class="card-footer-item input is-info" type="text" placeholder="Add a comment :D">
+        <button class="card-footer-item button is-info" data-id="{{post.id}}">Add Comment</button>
+      </footer>
+    </div>
   </div>
-  <div class="media-right">
-    <button class="delete"></button>
-  </div>
+
+
+  {{else}}
+  <a class="is-flex is-justify-content-center pt-6" href="/login">You must login first to view this page</a>
+  {{/if}}
+
+
 </div>
+{{!-- </div> --}}
+<script src="./js/comments.js"></script>

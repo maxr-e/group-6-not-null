@@ -19,5 +19,12 @@
     "img": "/images/cow-giraffe.webp",
     "description": "asdfasdfasdf",
     "user_id": 1
+  },
+  {
+    "id": 4,
+    "title": "I like beef",
+    "img": "/images/cow-giraffe.webp",
+    "description": "Beef is love. Beef is life",
+    "user_id": 3
   }
 ]

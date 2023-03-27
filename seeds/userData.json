@@ -10,5 +10,11 @@
         "username": "John Doe",
         "email": "JohnDoe@JD.com",
         "password": "asd123"
+    },
+    {
+        "id": 3,
+        "username": "IsmellLikebeef",
+        "email": "Beefpatty@JD.com",
+        "password": "asd123"
     }
 ]

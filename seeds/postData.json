@@ -19,5 +19,12 @@
     "img": "/images/cow-giraffe.webp",
     "description": "asdfasdfasdf",
     "user_id": 1
+  },
+  {
+    "id": 4,
+    "title": "My cow",
+    "img": "/images/Jerseys-in-ChristmasJumpers.webp",
+    "description": "moo-ey xmas",
+    "user_id": 3
   }
 ]

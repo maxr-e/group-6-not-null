@@ -20,7 +20,9 @@
                 <section class="card">
                     <header>"Post Title:"</header>
                     <a href="/post/{{post.id}}">{{post.title}}</a>
-                    <p>Created by {{user.username}} on {{ format_date post.date_created }}</p>
+
+                    <p>Created by {{post.user.username}} on {{ format_date post.created_on }}</p>
+
                 </section>
             </main>
         </div>

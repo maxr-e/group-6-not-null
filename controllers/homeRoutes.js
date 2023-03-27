@@ -65,11 +65,31 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-router.get('/post', async (req, res) => {
-  
-  res.render('post', {logged_in: req.session.logged_in});
+router.get('/post', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [
+        {
+          model: Post,
+          include: [User],
+        },
+        {
+          model: Comment,
+          include: [User]
+        }
+      ]
+    });
 
-})
+    const user = userData.get({ plain: true });
+    res.render('post', { user, logged_in: req.session.logged_in });
+  } catch (err) {
+    res.status(500).json(err);
+    console.log(err);
+  }
+});
+
 
 // Get single post
 router.get('/post/:id', async (req, res) => {

@@ -4,7 +4,7 @@
 <section class="container card">
     <div class="columns">
         <div class="column notification is-danger">
-            <div class="control py-4 "> Community Reviews
+           <div class="control py-4 has-text-centered"> Community Reviews
             </div>
         </div>
     </div>
@@ -18,9 +18,11 @@
                     <img src="{{ post.img }}" alt="image of user cow or giraffe" style="height: 150px"/>
                 </section>
                 <section class="card">
-                    <header>"Post Title"</header>
+                    <header>"Post Title:"</header>
                     <a href="/post/{{post.id}}">{{post.title}}</a>
+
                     <p>Created by {{post.user.username}} on {{ format_date post.created_on }}</p>
+
                 </section>
             </main>
         </div>

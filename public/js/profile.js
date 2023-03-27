@@ -19,5 +19,3 @@ const delButtons = document.querySelectorAll('.post-list');
 delButtons.forEach((button) => {
     button.addEventListener('click', delButtonHandler);
 })
-
-// .addEventListener('click', delButtonHandler);

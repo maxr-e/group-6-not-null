@@ -1,6 +1,6 @@
 {{!-- displays all posts only if logged in--}};
 {{!-- Otherwise show login page --}}
-
+{{#if logged_in}}
 <section class="container card">
     <div class="columns">
         <div class="column notification is-danger">
@@ -39,10 +39,17 @@
             <div class="column">
                 <div class="box">
                     <p class="title is-5">
-                        <button class="button my-3 is-rounded search-btn tag is-dark is-large">Add Post</button>
+                        <button class="button my-3 is-rounded search-btn tag is-dark is-large"><a href="/post">Add Post</a></button>
                     </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+{{!-- comment out to view community page if createprofile/login is not functioning yet --}}
+    {{else}}
+    <div class="is-flex is-justify-content-center">
+        <div class="box has-background-info" >
+        <div class="column">
+        <h2 class="title is-2 is-primary"><a class="is-flex is-justify-content-center pt-6 is-dark" href="/login">You must login first to view this page</a></h2>
+     {{/if}}

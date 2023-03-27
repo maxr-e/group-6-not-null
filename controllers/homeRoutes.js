@@ -66,13 +66,8 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 router.get('/post', async (req, res) => {
-
-  if (req.session.logged_in) {
-    res.redirect('/post');
-    return;
-  }
-
-  res.render('post');
+  
+  res.render('post', {logged_in: req.session.logged_in});
 
 })
 

@@ -12,7 +12,7 @@ const newFormHandler = async (event) => {
 
   // alert(post_id)
   if (description) {
-    const response = await fetch(`/api/posts/${route_id}`, {
+    const response = await fetch(`/api/post/${route_id}`, {
       method: 'POST',
       body: JSON.stringify({ description, post_id, route_id }),
       headers: {

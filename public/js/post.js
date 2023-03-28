@@ -1,6 +1,6 @@
 const newPostHandler = async (event) => {
   event.preventDefault();
- 
+
  
   const title = document.querySelector('#project-name').value.trim();
   const description = document.querySelector('#project-desc').value.trim();
@@ -25,7 +25,7 @@ const newPostHandler = async (event) => {
   }
  };
  
- 
+ console.log("here we are")
  document
   .querySelector('.new-project-form')
   .addEventListener('submit', newPostHandler);

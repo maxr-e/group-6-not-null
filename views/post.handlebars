@@ -3,81 +3,95 @@ can edit / comment on post --}}
 
 
 <div class="row">
- <div class="col-auto">
-   <strong>Welcome, {{user.username}}!</strong>
- </div>
+  <div class="col-auto">
+    <strong>Welcome, {{ user.username }}!</strong>
+  </div>
 </div>
 
-
-<div class="row mt-4">
- <div class="col-md-6">
-   <strong>Create a New Project:</strong>
-
-
-    <form class="form new-project-form">
-     <div class="form-group">
-       <label for="project-name">project title:</label>
-       <input class="form-input" type="text" id="project-name" name="project-name" />
-     </div>
+<div id="postBox">
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <strong id="createNew">Create a New Post!</strong>
 
 
-<div class="field">
- <label class="label">Subject</label>
- <div class="control">
-   <div class="select">
-     <select>
-       <option>Select dropdown</option>
-       <option>Cow</option>
-       <option>Giraffe</option>
-     </select>
-   </div>
- </div>
+      <form class="form new-project-form">
+        <div id="postyBox" class="form-group">
+          <label id="postTitle" for="project-name">post title:</label>
+          <input class="form-input" type="text" id="project-name" name="project-name" />
+        </div>
+
+
+        <div id="selectAnimal" class="field">
+          <label id="subject" class="label">Subject</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option>Select dropdown</option>
+                <option>Cow</option>
+                <option>Giraffe</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <span id="imgBox">
+          <strong id="addImage">Add an image of the giraffe/cow</strong>
+          <span class="file is-boxed">
+            <label class="file-label">
+              <input class="file-input" type="file" name="resume">
+              <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                  Choose a file…
+                </span>
+              </span>
+            </label>
+          </span>
+        </span>
+
+
+        <span class="field">
+          <div class="control">
+            <div class="field">
+              <div class="form-group" id="theText">
+                <label id="description" for="project-desc">Description:</label>
+                <textarea class="textarea" id="project-desc" name="project-desc"
+                  placeholder="enter cow or giraffe description here"></textarea>
+                <!-- <textarea class="form-input" id="project-desc" name="project-desc"></textarea> -->
+              </div>
+              <!-- <input class="input is-success" type="text" placeholder="Text input" value="bulma"> -->
+              <span id="littleIcon">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-check"></i>
+                </span>
+              </span>
+            </div>
+          </div>
+        </span>
+        <div id="theButtons" class="field is-grouped">
+  <div class="control">
+    <button id="submitBtn" class="button is-link" type="submit"> Submit </button>
+  </div>
+  <div class="control">
+    <button class="button is-link is-light">Cancel</button>
+  </div>
 </div>
-<strong>Add an image of the giraffe/cow</strong>
-<span class="file is-boxed">
- <label class="file-label">
-   <input class="file-input" type="file" name="resume">
-   <span class="file-cta">
-     <span class="file-icon">
-       <i class="fas fa-upload"></i>
-     </span>
-     <span class="file-label">
-       Choose a file…
-     </span>
-   </span>
- </label>
-</span>
+      </form>
+    </div>
 
-
-<span class="field">
- <label class="label">Message</label>
- <div class="control">
-   <div class="field">
-     <div class="form-group">
-       <label for="project-desc">description:</label>
-       <textarea class="textarea" id="project-desc" name="project-desc" placeholder="enter cow or giraffe description here"></textarea>
-       <!-- <textarea class="form-input" id="project-desc" name="project-desc"></textarea> -->
-     </div>
-       <!-- <input class="input is-success" type="text" placeholder="Text input" value="bulma"> -->
-       <span class="icon is-small is-left">
-         <i class="fas fa-user"></i>
-       </span>
-       <span class="icon is-small is-right">
-         <i class="fas fa-check"></i>
-       </span>
-     </div>
-   </div>
- </div>
-</span>
-
-
-<div class="field is-grouped">
- <div class="control">
-   <button class="button is-link">Submit</button>
- </div>
- <div class="control">
-   <button class="button is-link is-light">Cancel</button>
- </div>
+  </div>
 </div>
+{{!-- <div id="theButtons" class="field is-grouped">
+  <div class="control">
+    <button id="submitBtn" class="button is-link" type="submit"> Submit </button>
+  </div>
+  <div class="control">
+    <button class="button is-link is-light">Cancel</button>
+  </div>
+</div> --}}
 
-<script src="./js/profile.js"></script>
+<script src="/js/post.js"></script>

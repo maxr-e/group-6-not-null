@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 
 // Home route
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
 
@@ -37,6 +37,34 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+//posting create a post to homepage
+// router.get('/post/:id', async (req, res) => {
+//   try {
+//     console.log("+++++++++++++++++++++")
+
+//     console.log("Should be viewing my project view")
+//     const postData = await Post.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['username'],
+//         },
+//       ],
+//     });
+//     console.log(postData)
+//     console.log("+++++++++++++++++++++")
+//     const post = postData.get({ plain: true });
+//     console.log(post)
+//     res.render('homepage', {
+//       post,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -68,11 +96,31 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-router.get('/post', async (req, res) => {
-  
-  res.render('post', {logged_in: req.session.logged_in});
+router.get('/post', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [
+        {
+          model: Post,
+          include: [User],
+        },
+        {
+          model: Comment,
+          include: [User]
+        }
+      ]
+    });
 
-})
+    const user = userData.get({ plain: true });
+    res.render('post', { user, logged_in: req.session.logged_in });
+  } catch (err) {
+    res.status(500).json(err);
+    console.log(err);
+  }
+});
+
 
 // Get single post
 router.get('/post/:id', async (req, res) => {

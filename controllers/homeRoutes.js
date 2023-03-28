@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
         }
       ]
     });
+    
     console.log({ postData });
     const posts = postData.map((post) =>
       post.get({ plain: true })
@@ -44,16 +45,18 @@ router.get('/profile', withAuth, async (req, res) => {
       include: [
         {
           model: Post,
-          include: [User],
+          include: [User, Comment],
         },
         {
           model: Comment,
-          include: [User]
-        }
+          include: [Post, User],
+        },
       ]
     });
 
     const user = userData.get({ plain: true });
+
+    console.log(userData.posts);
 
     res.render('profile', {
       ...user,
@@ -82,7 +85,7 @@ router.get('/post/:id', async (req, res) => {
           attributes: {
             exclude: ['password'],
           },
-          include: [Post]
+          include: [Comment]
         },
         {
           model: Comment,
@@ -91,8 +94,26 @@ router.get('/post/:id', async (req, res) => {
       ]
     });
     const post = postIDdata.get({ plain: true });
-    res.render('single-post', { post, logged_in: req.session.logged_in });
+
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [
+        {
+          model: Post,
+          include: [User],
+        },
+        {
+          model: Comment,
+          include: [User]
+        }
+      ]
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('single-post', { post, user, logged_in: req.session.logged_in });
     console.log(post);
+    console.log(user);
     // console.log(post[0].Comments[0]);
   } catch (err) {
     console.log(err);

@@ -82,8 +82,8 @@ router.get('/post/:id', async (req, res) => {
     console.log("+++++++++++++++++++++")
     const post = postData.get({ plain: true });
     console.log(post)
-    res.render('post', {
-      ...post,
+    res.render('homepage', {
+      post,
       logged_in: req.session.logged_in
     });
   } catch (err) {

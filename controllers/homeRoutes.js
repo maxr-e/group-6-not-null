@@ -143,6 +143,12 @@ router.get('/post/:id', async (req, res) => {
     });
     const post = postIDdata.get({ plain: true });
 
+    post.comments.forEach((comment) => {
+      if(comment.user_id === req.session.user_id) {
+        comment.isYours = true;
+      }
+  })
+
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [
@@ -161,7 +167,7 @@ router.get('/post/:id', async (req, res) => {
 
     res.render('single-post', { post, user, logged_in: req.session.logged_in });
     console.log(post);
-    console.log(user);
+    // console.log(user);
     // console.log(post[0].Comments[0]);
   } catch (err) {
     console.log(err);

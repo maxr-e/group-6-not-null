@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/login.css">
 <style>
 body {
   background-image: url('/images/giraffe.jpg');
@@ -6,103 +7,101 @@ body {
   background-size: cover;
 }
 </style>
-<main class="container has-background-link" style="width: 35%">
-  <div class="is-flex is-justify-content-center">
-        <div class="box has-background-info" >
-        <div class="column">
-        <h2 class="title is-2 is-primary">Login</h2> 
-    <form class="form ">
-        <div class="field">
-            <label class="label ">Username</label>
-            <div class="control has-icons-left has-icons-right">
-              <input class="input is-success" id = "username-login" type="text">
-              <span class="icon is-small is-left">
+      <div class="container loginbox">
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Login
+            </div>
+            <div class="title signup">
+               Signup
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Login</label>
+               <label for="signup" class="slide signup">Signup</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="#" class="login">
+                  <div class="field control has-icons-left">
+                     <input class="input is-success" id = "username-login" type="text" placeholder="Username">
+                <span class="icon is-small is-left">
                 <i class="fas fa-user" style="color: #304c7e;"></i>
-              </span>
-              <span class="icon is-small is-right">
-                <i class="fas"></i>
-              </span>
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">Password</label>
-            <div class="control has-icons-left has-icons-right">
-              <input class="input is-success" id = "password-login" type="password">
-              <span class="icon is-small is-left">
+                </span>
+                  </div>
+                  <div class="field control has-icons-left">
+                     <input class="input is-success" id = "password-login" type="password" placeholder="Password">
+                <span class="icon is-small is-left">
                 <i class="fas fa-key" style="color: #e2ee44;"></i>
-              </span>
-              <span class="icon is-small is-right">
-                <i class="fas"></i>
-              </span>
-            </div>
-          </div>
-          <div class="field is-grouped">
-            <div class="control">
-              <button class="button is-link" id = "loginbutton">Login</button>
-            </div>
-    </form>
-    </div>
-  </div>
+                </span>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Login" id = "loginbutton">
+                  </div>
+                <div class="imgart" > 
+                  <img src="/images/cowart.png" alt="cowart" width="128" height="128" style="float:left">
+                  <img src="/images/shrimpart.jpg" alt="shrimpart" width="135" height="148" style="float:right;margin:10px 10px">
+                </div>
+               </form>
 
-      <div class="column">
-      <div class="box has-background-info" >
-        <h2 class="title is-2 is-primary">Sign-Up</h2>  
-            <div class="field">
-                <label class="label">Username:</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input class="input is-success" id = "username-signup" type="text">
+               <form action="#" class="signup">
+                  <div class="field control has-icons-left">
+                     <input class="input is-success" id = "username-signup" type="text" placeholder="Username">
                   <span class="icon is-small is-left">
                     <i class="fas fa-user" style="color: #304c7e;"></i>
                   </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Password:</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input class="input is-success" id = "password-signup" type="password">
+                  </div>
+                  <div class="field control has-icons-left">
+                     <input class="input is-success" id = "password-signup" type="password" placeholder="Password">
                   <span class="icon is-small is-left">
                     <i class="fas fa-key" style="color: #e2ee44;"></i>
                   </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Email:</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input class="input is-success" id = "email-signup"  type="text">
+                  </div>
+                  <div class="field control has-icons-left">
+                     <input class="input is-success" id = "email-signup"  type="text" placeholder="Email Address">
                   <span class="icon is-small is-left">
                     <i class="far fa-envelope" style="color: #253b5f;"></i>
                   </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Age:</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input class="input is-success" id = "age-signup" type="text">
+                  </div>
+                  <div class="field control has-icons-left">
+                     <input class="input is-success" id = "age-signup" type="text" placeholder="Age">
                   <span class="icon is-small is-left">
                     <i class="fas fa-hourglass-half" style="color: #2a436f;"></i>
                   </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas"></i>
-                  </span>
-                </div>
-              </div>
-            <div class="field is-grouped">
-                <div class="control">
-                  <button class="button is-link" id = "signupbutton">Create Profile</button>
-                </div>
-        </form>
-  </div>
-</div>
-</div>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Signup" id = "signupbutton">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      </div>
 </main>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
 <script src="./js/login.js"></script>
 </html>

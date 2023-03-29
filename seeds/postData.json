@@ -1,28 +1,27 @@
 [
   {
       "id": 1,
-      "title": "This site suk",
+      "title": "wait a minute...",
       "img": "/images/cow-giraffe.webp",
-      "description": "asdfasdfasdf",
+      "description": "I think somebody copied my photo",
       "user_id": 1
   },
   {
     "id": 2,
-    "title": "This site don't suk",
-    "img": "/images/cow-giraffe.webp",
-    "description": "asdfasdfasdf",
+    "title": "Christmas Cow",
+    "img": "/images/Jerseys-in-ChristmasJumpers.jpg",
+    "description": "They look so cozy",
     "user_id": 1
   },
   {
     "id": 3,
-    "title": "This site sometimes suk",
-    "img": "/images/cow-giraffe.webp",
-    "description": "asdfasdfasdf",
+    "title": "How's the weather down there?",
+    "img": "/images/giraffe.jpg",
+    "description": "har har har",
     "user_id": 1
   },
   {
     "id": 4,
-
     "title": "I like beef",
     "img": "/images/cow-giraffe.webp",
     "description": "Beef is love. Beef is life",

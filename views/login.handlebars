@@ -1,21 +1,21 @@
 <style>
-body {
-  background-image: url('/images/giraffe.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
+  body {
+    background-image: url('/images/giraffe.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
 </style>
-<main class="container has-background-link" style="width: 35%">
+<main class="container has-background-link" style="width: 30%">
   <div class="is-flex is-justify-content-center">
-        <div class="box has-background-info" >
-        <div class="column">
-        <h2 class="title is-2 is-primary">Login</h2> 
-    <form class="form ">
-        <div class="field">
+    <div class="box has-background-info">
+      <div class="column">
+        <h2 class="title is-2 is-primary">Login</h2>
+        <form class="form ">
+          <div class="field">
             <label class="label ">Username</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input is-success" id = "username-login" type="text">
+              <input class="input is-success" id="username-login" type="text">
               <span class="icon is-small is-left">
                 <i class="fas fa-user" style="color: #304c7e;"></i>
               </span>
@@ -27,7 +27,7 @@ body {
           <div class="field">
             <label class="label">Password</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input is-success" id = "password-login" type="password">
+              <input class="input is-success" id="password-login" type="password">
               <span class="icon is-small is-left">
                 <i class="fas fa-key" style="color: #e2ee44;"></i>
               </span>
@@ -38,71 +38,72 @@ body {
           </div>
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-link" id = "loginbutton">Login</button>
+              <button class="button is-link" id="loginbutton">Login</button>
             </div>
-    </form>
-    </div>
-  </div>
-
-      <div class="column">
-      <div class="box has-background-info" >
-        <h2 class="title is-2 is-primary">Sign-Up</h2>  
-            <div class="field">
-                <label class="label">Username:</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input class="input is-success" id = "username-signup" type="text">
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-user" style="color: #304c7e;"></i>
-                  </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Password:</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input class="input is-success" id = "password-signup" type="password">
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-key" style="color: #e2ee44;"></i>
-                  </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Email:</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input class="input is-success" id = "email-signup"  type="text">
-                  <span class="icon is-small is-left">
-                    <i class="far fa-envelope" style="color: #253b5f;"></i>
-                  </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Age:</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input class="input is-success" id = "age-signup" type="text">
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-hourglass-half" style="color: #2a436f;"></i>
-                  </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas"></i>
-                  </span>
-                </div>
-              </div>
-            <div class="field is-grouped">
-                <div class="control">
-                  <button class="button is-link" id = "signupbutton">Create Profile</button>
-                </div>
         </form>
-  </div>
-</div>
-</div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="box has-background-info">
+        <h2 class="title is-2 is-primary">Sign-Up</h2>
+        <div class="field">
+          <label class="label">Username:</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input is-success" id="username-signup" type="text">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user" style="color: #304c7e;"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Password:</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input is-success" id="password-signup" type="password">
+            <span class="icon is-small is-left">
+              <i class="fas fa-key" style="color: #e2ee44;"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Email:</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input is-success" id="email-signup" type="text">
+            <span class="icon is-small is-left">
+              <i class="far fa-envelope" style="color: #253b5f;"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Age:</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input is-success" id="age-signup" type="text">
+            <span class="icon is-small is-left">
+              <i class="fas fa-hourglass-half" style="color: #2a436f;"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link" id="signupbutton">Create Profile</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
 </main>
 <script src="./js/login.js"></script>
+
 </html>

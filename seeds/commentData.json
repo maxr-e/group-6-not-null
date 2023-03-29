@@ -1,23 +1,27 @@
 [
   {
       "id": 1,
-      "description": "Yeah, it do.",
-      "user_id": 1
+      "description": "Not funny!",
+      "user_id": 1,
+      "post_id": 3
   },
   {
     "id": 2,
-    "description": "No, it don't",
-    "user_id": 1
+    "description": "Okay, maybe it's a little funny.",
+    "user_id": 1,
+    "post_id": 3
   },
   {
     "id": 3,
 
-    "description": "Sometimes, it do though.",
-    "user_id": 1
+    "description": "I lied. I love it.",
+    "user_id": 1,
+    "post_id": 3
   },
   {
     "id": 4,
     "description": "uhhhh....",
-    "user_id": 3
+    "user_id": 3,
+    "post_id": 3
   }
 ]

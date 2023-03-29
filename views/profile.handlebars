@@ -11,30 +11,38 @@
 
     {{!-- <div class="is-flex is-justify-content-center"> --}}
         <div class="columns gap is-flex is-justify-space-between is-multiline is-tablet" style="column-gap: 10%;">
-    {{#each posts as |post|}}
+            {{#each posts}}
             <div class="container card is-fluid color column is-one-quarter mb-5">
                 <div class="card-image">
                     <figure class="image is-4by3">
-                        <img src="{{ post.img }}" alt="placeholder image">
+                        <img src="{{ img }}" alt="placeholder image">
                     </figure>
                 </div>
                 <div class="card-content">
                     <div class="media">
                         <div class="media-content">
-                            <h4 class="title is-4 no-style"><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+                            <h4 class="title is-4 no-style"><a href="/post/{{ id }}">{{ title }}</a></h4>
                             <h5 class="subtitle is-6">Created by: {{ user.username }} on {{ format_date created_on}}
                             </h5>
                         </div>
                     </div>
                     <div class="content">
-                        <p>comments:</p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris.
+                        <p>description: </p>
+                        <div class="box">
+                            <article class="media">
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            {{ description }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <br>
-                    <time datetime="{{ format_date created_on }}">Comment created on: {{ format_date created_on}}</time>
                     <footer class="card-footer is-justify-content-center">
-                        <button class="card-footer-item post-list button is-danger" data-id="{{post.id}}">DELETE</button>
+                        <button class="card-footer-item post-list button is-danger"
+                            data-id="{{ id }}">DELETE</button>
                     </footer>
                 </div>
             </div>
@@ -46,5 +54,6 @@
 
 
         </div>
-    {{!-- </div> --}}
-            <script src="./js/profile.js"></script>
+        {{!--
+    </div> --}}
+    <script src="./js/profile.js"></script>

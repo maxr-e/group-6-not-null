@@ -1,6 +1,6 @@
 {{#if logged_in}}
 <div class="columns gap is-flex is-justify-space-between is-multiline is-tablet" style="column-gap: 10%;">
-  <div class="container card is-fluid color column is-one-third mb-5">
+  <div class="container card is-fluid color column is-half mb-5">
     <div class="card-image">
       <figure class="image is-4by3">
         <img src="{{ post.img }}" alt="placeholder image">
@@ -10,20 +10,50 @@
       <div class="media">
         <div class="media-content">
           <h4 class="title is-4 no-style"><a href="/post/{{ post.id }}">{{ post.title }}</a></h4>
-          <h5 class="subtitle is-6">Created by: {{ user.username }} on {{ format_date post.created_on}}
+          <h5 class="subtitle is-6">Created by: <strong>{{ post.user.username }}</strong> on {{ format_date
+            post.created_on}}
           </h5>
         </div>
       </div>
-      <div class="content">
-        <p>comments:</p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Phasellus nec iaculis mauris.
+      <h2>comments:</h2>
+      {{#each post.comments as |comment|}}
+      <div class="box">
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>{{ comment.user.username }}</strong><small> {{ format_date comment.createdAt }} </small>
+                <br>
+                {{ comment.description }}
+              </p>
+            </div>
+            {{!-- <nav class="level is-mobile">
+              <div class="level-left">
+                <a class="level-item" aria-label="reply">
+                  <span class="icon is-small">
+                    <i class="fas fa-reply" aria-hidden="true"></i>
+                  </span>
+                </a>
+                <a class="level-item" aria-label="retweet">
+                  <span class="icon is-small">
+                    <i class="fas fa-retweet" aria-hidden="true"></i>
+                  </span>
+                </a>
+                <a class="level-item" aria-label="like">
+                  <span class="icon is-small">
+                    <i class="fas fa-heart" aria-hidden="true"></i>
+                  </span>
+                </a>
+              </div>
+            </nav> --}}
+          </div>
+        </article>
       </div>
-      <br>
-      <time datetime="{{ format_date created_on }}">Comment created on: {{ format_date post.created_on}}</time>
+      {{/each}}
       <footer class="card-footer is-justify-content-center">
-        <input class="card-footer-item input is-info" type="text" placeholder="Add a comment :D">
-        <button class="card-footer-item button is-info" data-id="{{post.id}}">Add Comment</button>
+        <input class="card-footer-item input is-info" id="cmt-val" type="text" placeholder="Add a comment :D">
+        <button class="card-footer-item button is-info" id="add-cmt" route-id="{{ post.id }}"
+          data-id="{{ user.id }}">Add Comment</button>
       </footer>
     </div>
   </div>
@@ -36,4 +66,4 @@
 
 </div>
 {{!-- </div> --}}
-<script src="./js/comments.js"></script>
+<script src="/js/comment.js"></script>

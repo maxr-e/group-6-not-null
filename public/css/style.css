@@ -127,12 +127,13 @@ body {
 
 #createNew {
   border-radius: 12px;
-  border: 2px solid  #3f8ed0;
+  border: 2px solid #3f8ed0;
   padding: 20px;
   width: 200px;
   display: flex;
   position: relative;
   font-family: fantasy;
+
     font-size: large;
     bottom: 61px;
     background-color: #5dc555 ;
@@ -143,8 +144,8 @@ body {
 
 #theButtons {
   position: relative;
-    bottom: 50px;
-    left: 20px;
+  bottom: 50px;
+  left: 20px;
 }
 
 #littleIcon {
@@ -182,6 +183,7 @@ body {
   left: 900px;
   top: 67px;
 }
+
 #theText {
   width: 860px;
   position: relative;
@@ -193,11 +195,20 @@ body {
   position: relative;
   top: 10px;
 }
+
 #description {
   font-family: fantasy;
   font-size: larger;
 }
 
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.color {
+  background-color: lightblue;
+}
 
   .color {
     background-color:lightblue;

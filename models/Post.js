@@ -23,18 +23,16 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    tally: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
     created_on: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "user", 
-    //     key: "id"
-    //   }
-    // },
   },
   {
     sequelize,

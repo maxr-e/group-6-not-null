@@ -1,24 +1,37 @@
 {{!-- displays all posts only if logged in--}}
 {{!-- Otherwise show login page --}}
+<style> 
+    body {
+  background-image: url('/images/ankole-cattle.jpg');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+};
+</style>
 {{#if logged_in}}
 <section class="container card box">
     <div class="columns">
-        <div class="column notification is-danger">
+        <div class="column notification is-info">
            <div class="py-4 has-text-centered title is-2"> Community Reviews
             </div>
         </div>
     </div>
 </section>
 {{#each posts as |post| }}
-<section class="container card">
-    <div class="pb-5 columns">
-        <div class="column notification is-danger">
-            <main>
-                <section class="card">
-                    <img src="{{ post.img }}" alt="image of user cow or giraffe" style="height: 150px"/>
-                </section>
-
-                <section class="card">
+<section class="container commcard">
+    <div class="pb-6 columns">
+        <div class="column is-quarter is-offset-1 notification is-info">
+            {{!-- <main> --}}
+                <div class="card equal-height">
+                    <div class="card-image has-text-centered">
+                        <figure class="image is-inline-block">
+                            <img src="{{ post.img }}" alt="image of user cow or giraffe" style="height: 200px"/>
+                        </figure>
+                    </div>
+                </div>
+        </div>
+        <div class="column is-half is-offset-1 notification is-info">
+                <section class="card-content">
                     <article class="message">
 
                      <div class="message-header">
@@ -34,7 +47,7 @@
                    </article>
                 </section>
 
-            </main>
+            {{!-- </main> --}}
         </div>
     </div>
 </section>

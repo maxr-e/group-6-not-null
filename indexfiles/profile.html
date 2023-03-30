@@ -1,164 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Registry</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="../public/css/style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../public/css/style.css" />
+  </head>
 
-<body>
-    <header class="is-flex is-justify-content-space-between p-2">
-        <h1>
-            Rate my Giraffe/Cow
-        </h1>
-        <!-- Only display the logout button if the user is logged in -->
+  <header class="is-flex is-justify-content-space-between p-2">
+    <h1>Rate my Giraffe/Cow</h1>
+    <!-- Only display the logout button if the user is logged in -->
 
-        <nav>
-            <button class="btn" id="logout">logout</button>
-        </nav>
+    <nav>
+      <button class="btn" id="logout">logout</button>
+    </nav>
+  </header>
+  <main class="container mt-5">
+    <div class="row hero">
+      <div class="hero-body is-flex is-justify-content-center">
+        <h2 class="title">Welcome, {{user.username}}!</h2>
+      </div>
+    </div>
 
-    </header>
-    <main class="container mt-5">
-        <div class="row hero">
-            <div class="hero-body is-flex is-justify-content-center">
-                <h2 class="title">Welcome, {{user.username}}!</h2>
+    <h3 class="is-flex is-justify-content-center pb-6">My Posts</h3>
+
+    <div class="is-flex is-justify-content-space-between">
+      <div class="columns is-multiline is-tablet">
+        <div class="card column is-one-third px-5">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img
+                src="https://bulma.io/images/placeholders/1280x960.png"
+                alt="placeholder image"
+              />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <h4 class="title is-4">
+                  <a href="/post/{{post.id}}">{{post.title}}</a>
+                </h4>
+                <h5 class="subtitle is-6">
+                  Created by: {{ user.username }} on {{ format_date created_on}}
+                </h5>
+              </div>
             </div>
+            <div class="content">
+              <p>comments:</p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              nec iaculis mauris.
+            </div>
+            <br />
+            <time datetime="{{ format_date created_on }}"
+              >{{ format_date created_on}}</time
+            >
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item is-danger"
+                ><button class="button is-danger" data-id="{{post.id}}">
+                  DELETE
+                </button></a
+              >
+            </footer>
+          </div>
         </div>
 
-        <h3 class="is-flex is-justify-content-center pb-6">My Posts</h3>
-
-        <div class="is-flex is-justify-content-space-between">
-            <div class="columns is-multiline is-tablet">
-                <div class="card column is-one-third px-5">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <h4 class="title is-4"><a href="/post/{{post.id}}">{{post.title}}</a></h4>
-                                <h5 class="subtitle is-6">Created by: {{ user.username }} on {{ format_date created_on}}
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>comments:</p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Phasellus nec iaculis mauris.
-                        </div>
-                        <br>
-                        <time datetime="{{ format_date created_on }}">{{ format_date created_on}}</time>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item is-danger"><button class="button is-danger"
-                                    data-id="{{post.id}}">DELETE</button></a>
-                        </footer>
-                    </div>
-                </div>
-
-                <div class="card column is-one-third px-5">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <h4 class="title is-4"><a href="/post/{{post.id}}">{{post.title}}</a></h4>
-                                <h5 class="subtitle is-6">Created by: {{ user.username }} on {{ format_date created_on}}
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>comments:</p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Phasellus nec iaculis mauris.
-                        </div>
-                        <br>
-                        <time datetime="{{ format_date created_on }}">{{ format_date created_on}}</time>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item is-danger"><button class="button is-danger"
-                                    data-id="{{post.id}}">DELETE</button></a>
-                        </footer>
-                    </div>
-                </div>
-
-                <div class="card column is-one-third px-5">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <h4 class="title is-4"><a href="/post/{{post.id}}">{{post.title}}</a></h4>
-                                <h5 class="subtitle is-6">Created by: {{ user.username }} on {{ format_date created_on}}
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>comments:</p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Phasellus nec iaculis mauris.
-                        </div>
-                        <br>
-                        <time datetime="{{ format_date created_on }}">{{ format_date created_on}}</time>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item is-danger"><button class="button is-danger"
-                                    data-id="{{post.id}}">DELETE</button></a>
-                        </footer>
-                    </div>
-                </div>
-
-                <div class="card column is-one-third px-5">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="placeholder image">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <h4 class="title is-4"><a href="/post/{{post.id}}">{{post.title}}</a></h4>
-                                <h5 class="subtitle is-6">Created by: {{ user.username }} on {{ format_date created_on}}
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>comments:</p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Phasellus nec iaculis mauris.
-                        </div>
-                        <br>
-                        <time datetime="{{ format_date created_on }}">{{ format_date created_on}}</time>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item is-danger"><button class="button is-danger"
-                                    data-id="{{post.id}}">DELETE</button></a>
-                        </footer>
-                    </div>
-                </div>
+        <div class="card column is-one-third px-5">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img
+                src="https://bulma.io/images/placeholders/1280x960.png"
+                alt="placeholder image"
+              />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <h4 class="title is-4">
+                  <a href="/post/{{post.id}}">{{post.title}}</a>
+                </h4>
+                <h5 class="subtitle is-6">
+                  Created by: {{ user.username }} on {{ format_date created_on}}
+                </h5>
+              </div>
             </div>
-
-
+            <div class="content">
+              <p>comments:</p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              nec iaculis mauris.
+            </div>
+            <br />
+            <time datetime="{{ format_date created_on }}"
+              >{{ format_date created_on}}</time
+            >
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item is-danger"
+                ><button class="button is-danger" data-id="{{post.id}}">
+                  DELETE
+                </button></a
+              >
+            </footer>
+          </div>
         </div>
 
-        <script src="./js/profile.js"></script>
+        <div class="card column is-one-third px-5">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img
+                src="https://bulma.io/images/placeholders/1280x960.png"
+                alt="placeholder image"
+              />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <h4 class="title is-4">
+                  <a href="/post/{{post.id}}">{{post.title}}</a>
+                </h4>
+                <h5 class="subtitle is-6">
+                  Created by: {{ user.username }} on {{ format_date created_on}}
+                </h5>
+              </div>
+            </div>
+            <div class="content">
+              <p>comments:</p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              nec iaculis mauris.
+            </div>
+            <br />
+            <time datetime="{{ format_date created_on }}"
+              >{{ format_date created_on}}</time
+            >
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item is-danger"
+                ><button class="button is-danger" data-id="{{post.id}}">
+                  DELETE
+                </button></a
+              >
+            </footer>
+          </div>
+        </div>
 
-    </main>
-    <footer>
+        <div class="card column is-one-third px-5">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img
+                src="https://bulma.io/images/placeholders/1280x960.png"
+                alt="placeholder image"
+              />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <h4 class="title is-4">
+                  <a href="/post/{{post.id}}">{{post.title}}</a>
+                </h4>
+                <h5 class="subtitle is-6">
+                  Created by: {{ user.username }} on {{ format_date created_on}}
+                </h5>
+              </div>
+            </div>
+            <div class="content">
+              <p>comments:</p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              nec iaculis mauris.
+            </div>
+            <br />
+            <time datetime="{{ format_date created_on }}"
+              >{{ format_date created_on}}</time
+            >
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item is-danger"
+                ><button class="button is-danger" data-id="{{post.id}}">
+                  DELETE
+                </button></a
+              >
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    </footer>
+    <script src="./js/profile.js"></script>
+  </main>
+  <footer></footer>
 
-    <!-- Only include the logout script if the user is logged in -->
+  <!-- Only include the logout script if the user is logged in -->
 
-    <script src="/js/logout.js"></script>
-
-</body>
-
+  <script src="/js/logout.js"></script>
 </html>

@@ -47,6 +47,33 @@ body {
   min-width: 400px;
 } */
 
+#smolShrimp {
+
+}
+
+#bigShrimp {
+
+}
+
+#pinkShrimp {
+
+}
+
+.postWelc {
+  font-family: fantasy;
+  font-size: xx-large;
+}
+
+#myPosts {
+  font-family: fantasy;
+  font-size: x-large;
+}
+
+#createdBy {
+  font-family: fantasy;
+  font-size: large;
+}
+
 .root {
     --primary: #3D5852;
     --secondary: #86938F;
@@ -57,6 +84,19 @@ body {
     --error: rgb(228, 46, 1);
     --border-radius: 0.3rem;
   }
+
+  /* .hero {
+    width:100%;
+    height:100vh;
+    background-image:linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+    position:relative;
+    padding:0 5%;
+    display:flex;
+    align-items: center;
+    justify-content: center; */
+
+
+  /* } */
 #welcome {
   background-color: #ffffff;
   width: fit-content;

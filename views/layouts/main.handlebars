@@ -14,19 +14,20 @@
 <body>
   <header class="section hero-banner">
     <nav class="level is-mobile">
-      <button class="button is-info level-item has-text-centered home-page-button"><a href="/">Home</a></button>
-      <button class="button is-info level-item has-text-centered home-page-button"><a href="/post">Create Post</a></button>
+      <button class="button is-info level-item has-text-centered home-page-button" id="homebtn"><a href="/">Home</a></button>
+      <button class="button is-info level-item has-text-centered home-page-button" id="homebtn"><a href="/post">Create Post</a></button>
       <p class="level-item">
         <img
-          src="/images/cow-giraffe.webp"
-          alt="Cow with giraffe patterns" style="height: 150px">
+          src="/images/cow-giraffe.png"
+          alt="Cow with giraffe patterns" style="height: 150px" id="cowheader">
       </p>
+      <button class="button is-info level-item has-text-centered home-page-button" id="homebtn"><a href="/profile">Profile</a></button>
         {{#if logged_in}}
-        <button class="button is-danger level-item has-text-centered home-page-button" id="logout">logout</button>
+        <button class="button is-danger level-item has-text-centered home-page-button" id="logout">Logout</button>
         {{else}}
-        <button class="button level-item has-text-centered is-success home-page-button"><a href="/login">Login</a></button>
+        <button class="button level-item has-text-centered is-success home-page-button"id="homebtn" ><a href="/login">Login</a></button>
         {{/if}}
-      <button class="button is-info level-item has-text-centered home-page-button"><a href="/profile">Profile</a></button>
+      
     </nav>
   </header>
   <main class="container container-fluid mt-5">
@@ -41,5 +42,4 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
-
 </html>

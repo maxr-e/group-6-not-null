@@ -202,12 +202,28 @@ body {
     background-color: #49c78e !important;
     border-color: transparent;
     color: #fff;
-   };
-
-   #commcard {
-    border-radius: 0.25rem;
-    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
-    color: #4a4a4a;
-    max-width: 100%;
-    position: relative;
    }
+
+   .button {
+    font-family: 'Edu NSW ACT Foundation';
+    }
+
+    .home-page-button{
+      line-height: 60px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    #cowheader{
+      border-radius: 50px;
+    }
+
+    .homecard{
+      max-width: 500px;
+    }

@@ -31,17 +31,17 @@ const newFormHandler = async (event) => {
 
 
 const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+  if (event.target.hasAttribute('del-id')) {
+    const id = event.target.getAttribute('del-id');
 
 
-    const response = await fetch(`/api/posts/${id}`, {
+    const response = await fetch(`/api/comments/${id}`, {
       method: 'DELETE',
     });
 
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.reload();
     } else {
       alert('Failed to delete comment');
     }

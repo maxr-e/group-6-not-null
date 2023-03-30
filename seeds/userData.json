@@ -7,14 +7,20 @@
     },
     {
         "id": 2,
-        "username": "John Doe",
-        "email": "JohnDoe@JD.com",
+        "username": "KrusteaceanKing",
+        "email": "krusteez@chitin.com",
         "password": "asd123"
     },
     {
         "id": 3,
         "username": "IsmellLikebeef",
         "email": "Beefpatty@JD.com",
+        "password": "asd123"
+    },
+    {
+        "id": 4,
+        "username": "notOkapis",
+        "email": "giraffa@giraffidae.com",
         "password": "asd123"
     }
 ]

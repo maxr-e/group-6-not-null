@@ -11,6 +11,12 @@
   * [Questions](#questions)
 
   ## Description
+  User Story
+
+```md
+  Our project is called "Rate my Cow/Giraffe", an image sharing website dedicated to cows and giraffes. Users can sign up by entering a username, password, email address, and age. The user's data will be saved and they will be able to join the community. Once logged in, users may create their own posts consisting of a title, description, and an image of their choice. The profile page allows the user to view their own posts. Other users may log in and view everyone's posts on the community reviews page. They can also click on another user's post and leave a comment. 
+```
+
 
 * Use Node.js and Express.js to create a RESTful API.
 
@@ -40,33 +46,29 @@
 
 * Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-
-* Satisfies the following code requirements:
-
-  * Application uses a Node.js and Express.js back end and uses both GET and POST routes for retrieving and adding new data.
-
-  * Application has a folder structure that meets the MVC paradigm and uses Handlebars.js as the template engine.
-
-  * Application is backed by a MySQL database with a Sequelize ORM and protects API keys and sensitive information with environment variables.
-
-  * Application includes user authentication (express-session and cookies).
-
-  * Application uses at least one new library, package, or technology not covered in class.
-
-
   ## Installation
 
+  ## Application Links and Screenshot
+Application Screenshot:
 
-  ## Usage
+<img src="images/demo.PNG">
+
+Link to Deployed Application: 
+
+Link to Github Repository: https://github.com/maxr-e/group-6-not-null
+
+  ## Technology Used
+  * Bcrypt
+  * Bulma
+  * Connect-session-Sequelize
+  * Dotenv
+  * Express, Express-Handlebars, Express-Session
+  * Mysql2
+  * Chalk
+  * Sequelize
   
-
   ## License
   MIT License
 
-  ## Contribution
-  
-
-  ## Test
-  
-
-  ## Questions
+  ## Credits
+  Created by Safiya Shrader, Max Royal-Eisenberg, Jordan Pace, Jonathan Chen as part of the UC Berkeley Extension Bootcamp.

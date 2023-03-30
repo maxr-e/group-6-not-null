@@ -47,16 +47,26 @@ body {
   min-width: 400px;
 } */
 
-#smolShrimp {
-
+#smolShrip {
+  position: relative;
+  width: 300px;
+  right: 270px;
+  bottom: 10px;
+  transform: rotate(300deg);
 }
 
 #bigShrimp {
-
+  position: relative;
+  right: -5px;
+  bottom: -5px;
+  transform: rotate(320deg);
 }
 
 #pinkShrimp {
-
+  display: flex;
+  position: relative;
+  bottom: 75px;
+  left: 160px;
 }
 
 .postWelc {
@@ -108,7 +118,7 @@ body {
 
 #postBox {
   background-color: rgb(241, 236, 143);
-  position: relative;
+
   padding: 9px;
   top: 10px;
   border-radius: 25px;
@@ -124,7 +134,7 @@ body {
   position: relative;
   font-family: fantasy;
     font-size: large;
-    bottom: 10px;
+    bottom: 61px;
     background-color: #5dc555 ;
     color: antiquewhite;
     left: 30px;

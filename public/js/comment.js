@@ -41,56 +41,64 @@ const updateLikes = async (event) => {
   console.log(post_id);
   console.log(tally);
 
-  Promise.all([
-    fetch(`/api/post/${post_id}`, {
-      method: 'PUT',
-      body: JSON.stringify({ tally, post_id, user_id }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }),
-    fetch(`/api/users/${user_id}`, {
-      method: 'POST',
-      body: JSON.stringify({ post_id, user_id }),
-      headers: {
-        'Content-Types': 'application/json',
-      },
-    })
-  ]).then(function (responses) {
-    return Promise.all(responses.map(function (response) {
-      return response.json();
-    }));
-  }).catch(function (error) {
-    console.log(error);
-  })
+  // Promise.all([
+  //   fetch(`/api/post/${post_id}`, {
+  //     method: 'PUT',
+  //     body: JSON.stringify({ tally, post_id, user_id }),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+
+  //   }).catch(err => console.log(err)),
+  //   fetch(`/api/users/${user_id}`, {
+  //     method: 'POST',
+  //     body: JSON.stringify({ post_id, user_id }),
+  //     headers: {
+  //       'Content-Types': 'application/json',
+  //     },
+  //   }).catch(err => console.log(err))
+  // ]).then(function (responses) {
+
+  //   return Promise.all(responses.map(function (response) {
+  //     return response.json();
+  //   }));
+
+  // }).catch(function (error) {
+  //   console.log(error);
+  //   console.log(ab);
+  // })
+
+  console.log(user_id);
+  console.log(post_id);
+  console.log(tally);
 
   // update post likes
-  // const response1 = await fetch(`/api/post/${post_id}`, {
+  const response1 = await fetch(`/api/post/${post_id}`, {
 
-  //   method: 'PUT',
-  //   body: JSON.stringify({ tally, post_id, user_id }),
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
+    method: 'PUT',
+    body: JSON.stringify({ tally, post_id, user_id }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
 
-  // });
+  });
 
-  // // create like
-  // const response2 = await fetch(`/api/users/${user_id}`, {
-  //   method: 'POST',
-  //   body: JSON.stringify({ post_id, user_id }),
-  //   headers: {
-  //     'Content-Types': 'application/json',
-  //   },
-  // });
+  // create like
+  const response2 = await fetch(`/api/users/${user_id}`, {
+    method: 'POST',
+    body: JSON.stringify({ post_id, user_id }),
+    headers: {
+      'Content-Types': 'application/json',
+    },
+  });
 
-  // if (response1.ok && response2.ok) {
-  //   // document.location.replace('/');
-  //   console.log(response1);
-  //   console.log(response2);
-  // } else {
-  //   alert('Failed to update likes');
-  // }
+  if (response1.ok && response2.ok) {
+    // document.location.replace('/');
+    console.log(response1);
+    console.log(response2);
+  } else {
+    alert('Failed to update likes');
+  }
 }
 
 const delButtonHandler = async (event) => {

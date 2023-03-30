@@ -1,6 +1,6 @@
 // create user / login
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Likes } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -61,14 +61,32 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
 router.post('/logout', (req, res) => {
-    if (req.session.logged_in) {
-      req.session.destroy(() => {
-        res.status(204).end();
-      });
-    } else {
-      res.status(404).end();
-    }
-  });
-  
-  module.exports = router;
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
+router.post('/:id', async (req, res) => {
+  try {
+    const dbLikeData = await Likes.create({
+      user_id: req.body.user_id,
+      post_id: req.body.post_id,
+    })
+
+    console.log(dbLikeData);
+    console.log(req.body);
+
+    res.status(200).json(dbLikeData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;

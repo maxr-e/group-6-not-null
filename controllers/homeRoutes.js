@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../models');
+const { Post, User, Comment, Likes } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -21,7 +21,7 @@ router.get('/', withAuth, async (req, res) => {
         }
       ]
     });
-    
+
     console.log({ postData });
     const posts = postData.map((post) =>
       post.get({ plain: true })
@@ -138,16 +138,26 @@ router.get('/post/:id', async (req, res) => {
         {
           model: Comment,
           include: [User]
+        },
+        {
+          model: Likes,
+          include: [User]
         }
       ]
     });
     const post = postIDdata.get({ plain: true });
 
     post.comments.forEach((comment) => {
-      if(comment.user_id === req.session.user_id) {
+      if (comment.user_id === req.session.user_id) {
         comment.isYours = true;
       }
-  })
+    })
+
+    post.likes.forEach((like) => {
+      if(like.user_id === req.session.user_id) {
+        req.session.hasLiked = true;
+      }
+    })
 
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
@@ -165,8 +175,9 @@ router.get('/post/:id', async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('single-post', { post, user, logged_in: req.session.logged_in });
+    res.render('single-post', { post, user, logged_in: req.session.logged_in, userId: req.session.user_id, hasLiked: req.session.hasLiked});
     console.log(post);
+    console.log(post.likes[0]);
     // console.log(user);
     // console.log(post[0].Comments[0]);
   } catch (err) {

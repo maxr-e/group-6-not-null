@@ -20,8 +20,14 @@
   },
   {
     "id": 4,
-    "description": "uhhhh....",
+    "description": "looks yummy",
     "user_id": 3,
-    "post_id": 3
+    "post_id": 2
+  },
+  {
+    "id": 5,
+    "description": "This cow looks familiar...",
+    "user_id": 2,
+    "post_id": 1
   }
 ]

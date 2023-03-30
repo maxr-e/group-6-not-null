@@ -5,6 +5,27 @@
       <figure class="image is-4by3">
         <img src="{{ post.img }}" alt="placeholder image">
       </figure>
+      {{#if hasLiked}}
+      <button class="button disabled is-success like-btn" id="thisOne" attribute="disabled: true;" likes-id="{{ post.id }}" data-user="{{ userId }}"
+        tally-id="{{post.tally}}" style="margin-top: 5px; float: right;">
+        <a aria-label="like" class="disabled">
+          <span class="icon is-small disabled" id="thisOne" likes-id="{{ post.id }}" data-user="{{ userId }}" tally-id="{{post.tally}}">
+            <i class="fas fa-heart disabled" id="thisOne" likes-id="{{ post.id }}" data-user="{{ userId }}" tally-id="{{post.tally}}"
+              aria-hidden="true"></i>
+          </span>
+        </a>
+      </button>
+      {{else}}
+      <button class="button is-success like-btn" id="thisOne" likes-id="{{ post.id }}" data-user="{{ userId }}"
+        tally-id="{{post.tally}}" style="margin-top: 5px; float: right;">
+        <a aria-label="like">
+          <span class="icon is-small" id="thisOne" likes-id="{{ post.id }}" data-user="{{ userId }}" tally-id="{{post.tally}}">
+            <i class="fas fa-heart" id="thisOne" likes-id="{{ post.id }}" data-user="{{ userId }}" tally-id="{{post.tally}}"
+              aria-hidden="true"></i>
+          </span>
+        </a>
+      </button>
+      {{/if}}
     </div>
     <div class="card-content">
       <div class="media">
@@ -15,6 +36,18 @@
           </h5>
         </div>
       </div>
+      <h1 class="is-flex is-justify-content-center"><strong>Description:</strong></h1>
+      <div class="box">
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <p style="text-align:center;">
+                {{ post.description }}
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
       <h2>comments:</h2>
       {{#each post.comments as |comment|}}
       {{#if comment.isYours}}
@@ -23,7 +56,8 @@
           <div class="media-content">
             <div class="content">
               <p>
-                <strong>{{ comment.user.username }}</strong><small> {{ format_date comment.createdAt }} </small><button class="delete is-small" del-id="{{ comment.id }}" style="float:right;"></button>
+                <strong>{{ comment.user.username }}</strong><small> {{ format_date comment.createdAt }} </small><button
+                  class="delete is-small" del-id="{{ comment.id }}" style="float:right;"></button>
                 <br>
                 {{ comment.description }}
               </p>

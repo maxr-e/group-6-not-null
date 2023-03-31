@@ -288,3 +288,7 @@ body {
     .homecard{
       max-width: 500px;
     }
+
+    .createdbyuser{
+      color: black;
+    }

@@ -1,4 +1,5 @@
 const attributes = document.getElementById('thisOne');
+const attributes2 = document.getElementById('thisOne');
 
 
 
@@ -34,9 +35,9 @@ const newFormHandler = async (event) => {
 const updateLikes = async (event) => {
   event.preventDefault();
 
-  const tally = attributes.getAttribute('tally-id');
-  const post_id = attributes.getAttribute('likes-id');
-  const user_id = attributes.getAttribute('data-user');
+  const tally = attributes2.getAttribute('tally-id');
+  const post_id = attributes2.getAttribute('likes-id');
+  const user_id = attributes2.getAttribute('data-user');
   console.log(user_id);
   console.log(post_id);
   console.log(tally);
@@ -84,20 +85,42 @@ const updateLikes = async (event) => {
   });
 
   // create like
+
+  if (response1.ok) {
+    // document.location.replace('/');
+    console.log(response1);
+    console.log(response1.json());
+  } else {
+    alert('Failed to update likes');
+  }
+}
+
+const createLikes = async (event) => {
+  event.preventDefault();
+
+  // if(req.session.hasLiked === true) {
+  //   alert('You have already liked this post!');
+  //   return;
+  // }
+
+  const tally = attributes.getAttribute('tally-id');
+  const post_id = attributes.getAttribute('likes-id');
+  const user_id = attributes.getAttribute('data-user');
+  console.log(user_id);
+  console.log(post_id);
+
   const response2 = await fetch(`/api/users/${user_id}`, {
     method: 'POST',
     body: JSON.stringify({ post_id, user_id }),
     headers: {
-      'Content-Types': 'application/json',
+      'Content-Type': 'application/json',
     },
   });
-
-  if (response1.ok && response2.ok) {
-    // document.location.replace('/');
-    console.log(response1);
+  if(response2.ok) {
     console.log(response2);
+    document.location.reload();
   } else {
-    alert('Failed to update likes');
+    alert('Failed to add like :(')
   }
 }
 
@@ -120,7 +143,7 @@ const delButtonHandler = async (event) => {
 };
 
 
-document.querySelector('.like-btn').addEventListener('click', updateLikes);
+document.querySelector('.like-btn').addEventListener('click', createLikes);
 
 document.querySelector('#add-cmt').addEventListener('click', newFormHandler);
 

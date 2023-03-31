@@ -72,7 +72,9 @@ router.post('/logout', (req, res) => {
   }
 });
 
+// create like
 router.post('/:id', async (req, res) => {
+  console.log('req.body,',req.body);
   try {
     const dbLikeData = await Likes.create({
       user_id: req.body.user_id,
@@ -80,7 +82,6 @@ router.post('/:id', async (req, res) => {
     })
 
     console.log(dbLikeData);
-    console.log(req.body);
 
     res.status(200).json(dbLikeData);
   } catch (err) {

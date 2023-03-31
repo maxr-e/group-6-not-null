@@ -124,6 +124,7 @@ router.get('/post', withAuth, async (req, res) => {
 
 // Get single post
 router.get('/post/:id', async (req, res) => {
+  req.session.hasLiked = false;
   try {
     const postIDdata = await Post.findByPk(req.params.id, {
 

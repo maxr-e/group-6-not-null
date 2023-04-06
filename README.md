@@ -35,9 +35,9 @@
   ## Links
 Application Screenshots:
 
-<img src="images/login.PNG">
-<img src="images/homepage.PNG">
-<img src="images/profile.PNG">
+<img src="public/images/login.PNG">
+<img src="public/images/homepage.PNG">
+<img src="public/images/profile.PNG">
 
 Link to Deployed Application: https://polar-temple-53244.herokuapp.com/login
 
